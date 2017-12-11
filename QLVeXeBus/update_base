@@ -33,6 +33,7 @@ insert into `mydb`.`tbl_login` values('1', '1');
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`tbl_nhanvien` (
   `maNV` VARCHAR(45) NOT NULL DEFAULT 'ql01',
+  `tenNV` VARCHAR(45) NOT NULL DEFAULT 'Nguyễn Văn A',
   `chucVu` VARCHAR(45) NOT NULL DEFAULT 'Quản Lý',
   `ngaySinh` DATE NOT NULL DEFAULT '1991-10-19',
   `sdt` DECIMAL(13) NOT NULL DEFAULT 01689850624,
@@ -46,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tbl_nhanvien` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-insert into `mydb`.`tbl_nhanvien` values ('NV1', 'Nhân Viên', '1989-12-19', 01689850624, 'Hà Nội', '1');
+insert into `mydb`.`tbl_nhanvien` values ('NV1', 'Nguyễn Văn A', 'Nhân Viên', '1989-12-19', 01689850624, 'Hà Nội', '1');
 -- -----------------------------------------------------
 -- Table `mydb`.`tbl_xe`
 -- -----------------------------------------------------
