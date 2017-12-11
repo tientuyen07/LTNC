@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tbl_login` (
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB;
 
+insert into `mydb`.`tbl_login` values('1', '1');
 
 -- -----------------------------------------------------
 -- Table `mydb`.`tbl_nhanvien`
@@ -45,8 +46,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tbl_nhanvien` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-
+insert into `mydb`.`tbl_nhanvien` values ('NV1', 'Nhân Viên', '1989-12-19', 01689850624, 'Hà Nội', '1');
 -- -----------------------------------------------------
 -- Table `mydb`.`tbl_xe`
 -- -----------------------------------------------------
@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tbl_xe` (
   PRIMARY KEY (`BKS`))
 ENGINE = InnoDB;
 
+insert into `mydb`.`tbl_xe` values('29V7-26383', 'Toyota', 2005, 50);
 
 -- -----------------------------------------------------
 -- Table `mydb`.`tbl_vexe`
@@ -65,12 +66,12 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`tbl_vexe` (
   `maVeXe` VARCHAR(45) NOT NULL DEFAULT 'vn7k',
   `loaiVexe` VARCHAR(45) NOT NULL DEFAULT 'Vé Ngày',
-  `donGia` VARCHAR(45) NULL DEFAULT '7.000 VNĐ',
+  `donGia` double NULL DEFAULT 7000,
   `hanSuDung` DATE NULL DEFAULT '2017-12-05',
   PRIMARY KEY (`maVeXe`))
 ENGINE = InnoDB;
 
-
+insert into `mydb`.`tbl_vexe` values('vn7k', 'Vé Ngày', 7000, '2017-12-05');
 -- -----------------------------------------------------
 -- Table `mydb`.`tbl_tuyenxe`
 -- -----------------------------------------------------
@@ -80,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tbl_tuyenxe` (
   PRIMARY KEY (`maTuyenXe`))
 ENGINE = InnoDB;
 
-
+insert into `mydb`.`tbl_tuyenxe` values(32, 'Giáp Bát - Nhổn');
 -- -----------------------------------------------------
 -- Table `mydb`.`tbl_vexe_has_tbl_tuyenxe`
 -- -----------------------------------------------------
@@ -102,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tbl_vexe_has_tbl_tuyenxe` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
+insert into `mydb`.`tbl_vexe_has_tbl_tuyenxe` values('vn7k', 32);
 -- -----------------------------------------------------
 -- Table `mydb`.`tbl_xe_has_tbl_tuyenxe`
 -- -----------------------------------------------------
@@ -128,6 +129,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tbl_xe_has_tbl_tuyenxe` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+insert into `mydb`.`tbl_xe_has_tbl_tuyenxe` values(32, '05:30:00', '23:00:00', 15, 20, '29V7-26383');
+
 
 -- -----------------------------------------------------
 -- Table `mydb`.`tbl_banve`
@@ -148,6 +151,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tbl_banve` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+insert into `mydb`.`tbl_banve` values('gd00001', '2017-12-01', 100, 20, 'NV01', '1');
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
